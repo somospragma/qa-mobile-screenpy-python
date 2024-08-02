@@ -8,27 +8,13 @@
   <br>
 </h1>
 
-<h4 align="center">Proyecto base de <a href="https://github.com/karatelabs/karate" target="_blank">Pragma</a>.</h4>
-
-<p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>
+<h4 align="center">Proyecto base de <a href="https://github.com/ScreenPyHQ/screenpy_selenium" target="_blank">Pragma</a>.</h4>
 
 Breve descripción del proyecto
 <p align="center">
   <a href="#topicos">Topicos</a> •
   <a href="#instalación-y-ejecución">Instalación y ejecución</a> •
-    <a href="#descarga">Descarga</a> •
+  <a href="#descarga">Descarga</a> •
   <a href="#download">Descripción</a> •
   <a href="#download">Consideraciones</a> •
   <a href="#download">Tecnologias</a> •
@@ -37,74 +23,35 @@ Breve descripción del proyecto
   <a href="#roadmap">Roadmap</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
-
 ## Topicos
 
-* Karate
-* Java
-* Rest
-* Gherkin
-* Cucumber
+* Python
+* Pytest
+* Appium
+* Screenpy
+* Screenpy-appium
 
 ## Instalación y ejecución
 
-Para clonar y ejecutar está aplicación, necesitas [Git](https://git-scm.com) and [Java JDK](https://nodejs.org/en/download/) instalados en tu equipo. Desde la linea de comando:
+Para clonar y ejecutar está aplicación, necesitas [Git](https://git-scm.com) y [Python](https://www.python.org//) instalados en tu equipo y desde la linea de comandos ejecutar lo siguiente:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/somospragma/qa-web-screenpy-python.git
 
-# Go into the repository
-$ cd electron-markdownify
+# Install Python virtual environment for the project 
+$ pipenv install
+$ pipenv shell
 
 # Install dependencies
-$ npm install
+pipenv install screenpy-appium
+pipenv install screenpy-adapter-allure
 
-# Run the app
-$ npm start
-```
+# Run tests 
+$ pytest features/ --alluredir='<projectpath>\allure-report'
 
-### Run con java jar
-```
-java -jar karate-1.4.0.jar <ruta_del_archivo.feature>
-
-java -jar karate-1.4.0.jar -Dkarate.options="--config karate-config.js" -DbaseUrl=https://miotraurl.com ruta_del_archivo.feature
-
-java -jar karate-1.4.0.jar -Dkarate.options="--config karate-config.js" ruta_del_archivo.feature
-```
-
-#### ejemplo run con java jar
-
-```
- java -jar karate-1.4.0.jar src/test/java/users/get/user-get.feature
- 
-```
-
-### Run con gradle
-
-```
-
- test --tests <nombre_de_clase>.<nombre_del_método> -D<propiedades_del_sistema>
- 
- test --tests SampleTesClassRunner -DbaseUrl=https://reqres.in 
- 
- test --tests SampleTesClassRunner.testTagsMethod -DbaseUrl=https://reqres.in 
- 
- test -Dtest=SampleTesClassRunner#testTagsMethod
- 
-```
-
-#### ejemplo run con gradle
-
-```
- gradle test --tests ManagementUserTest.testParallel -DbaseUrl=https://reqres.in 
- 
- gradle test --tests UserGetRunner -DbaseUrl=https://reqres.in 
- gradle test --tests UserGetRunner.userGet -DbaseUrl=https://reqres.in 
- 
- gradle test -Dtest=UserGetRunner#userGet -DbaseUrl=https://reqres.in 
- 
+# View report
+$ allure serve <allure-report-dir>
 ```
 
 
@@ -113,22 +60,21 @@ java -jar karate-1.4.0.jar -Dkarate.options="--config karate-config.js" ruta_del
 Puedes descargar el proyecto en el enlace [download](https://github.com/amitmerchant1990/electron-markdownify/releases/tag/v1.2.0) 
 
 ## Consideraciones
-El proyecto usa como servicio base el servicio demo Reqres, el correcto funcionamiento de los casos de uso dependeran de la disponibilidad del servicio demo en cuestion
+El proyecto usa como aplicación móvil la app de Demo sauce labs, el correcto funcionamiento de los casos de uso dependeran de la disponibilidad de la aplicación demo en cuestión
 
 ## Tecnologias
--   [JDK java]
--   [Karate]
--   [Gradle]
+-   [Python]
+-   [Appium]
+-   [Screenpy]
 
 
 ## Autores
 
-- Mauro L. Ibarra P.
-- Johan E. Agudelo
+- Jorge Ardila Camargo
 
 ## Relacionados
 
-- [Proyecto Karate Base](https://github.com/amitmerchant1990/markdownify-web)
+- [Proyecto screenpy Base](https://github.com/ScreenPyHQ/screenpy_appium)
 
 
 ## Roadmap
